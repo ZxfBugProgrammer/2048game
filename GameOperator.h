@@ -1,0 +1,10 @@
+#ifndef INC_2048GAME_GAMEOPERATOR_H
+#define INC_2048GAME_GAMEOPERATOR_H
+
+
+class GameOperator {
+
+};
+
+
+#endif //INC_2048GAME_GAMEOPERATOR_H

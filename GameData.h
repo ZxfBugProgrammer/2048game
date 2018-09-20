@@ -1,0 +1,10 @@
+#ifndef INC_2048GAME_GAMEDATA_H
+#define INC_2048GAME_GAMEDATA_H
+
+
+class GameData {
+
+};
+
+
+#endif //INC_2048GAME_GAMEDATA_H
