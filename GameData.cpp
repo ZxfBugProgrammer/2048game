@@ -24,14 +24,6 @@ int GameData::GetBestScore() {
     return this->local_best;
 }
 
-void GameData::SaveData(std::string path = "") {
-
-}
-
-void GameData::ReadData(std::string path = "") {
-
-}
-
 bool GameData::IsGameOver() {
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -43,4 +35,9 @@ bool GameData::IsGameOver() {
         }
     }
     return true;
+}
+
+void GameData::SetBestRecord(std::string name, int bscore) {
+    if (name.empty())local_name = "None";
+    local_best = bscore;
 }

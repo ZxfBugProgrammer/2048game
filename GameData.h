@@ -11,9 +11,7 @@ public:
 
     GameData();
 
-    //read game data from file
-    //or do nothing to begin a new game
-    void ReadData(std::string);
+    void SetBestRecord(std::string name = "", int bscore = 0);
 
     //get grid (x,y) number from data
     // 0 for empty
@@ -27,10 +25,6 @@ public:
 
     //get history best score
     int GetBestScore();
-
-    //save data to file
-    //default save to work directory
-    void SaveData(std::string);
 
     //check if game can move on
     bool IsGameOver();
