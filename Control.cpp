@@ -12,5 +12,6 @@ Control::Control() {
 
 void Control::begin() {
     Draw interface;
-    interface.PrintUi();
+    GameData Data;
+    interface.PrintUi(Data);
 }
