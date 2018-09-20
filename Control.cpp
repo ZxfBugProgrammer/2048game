@@ -4,6 +4,7 @@
 
 #include "Control.h"
 #include "Draw.h"
+#include "GameOperator.h"
 #include <iostream>
 
 Control::Control() {
