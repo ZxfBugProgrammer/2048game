@@ -19,7 +19,7 @@ public:
     // 0 for empty
     int GetPositionNumber(int, int);
 
-    //change (x,y) number
+    //change (x,y) to number P
     void ChangePositionNumber(int, int, int);
 
     //get my score
@@ -31,6 +31,9 @@ public:
     //save data to file
     //default save to work directory
     void SaveData(std::string);
+
+    //check if game can move on
+    bool IsGameOver();
 
 private:
     int num[4][4];

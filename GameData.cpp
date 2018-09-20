@@ -17,11 +17,11 @@ void GameData::ChangePositionNumber(int x, int y, int p) {
 }
 
 int GameData::GetScore() {
-    return 0;
+    return this->score;
 }
 
 int GameData::GetBestScore() {
-    return 0;
+    return this->local_best;
 }
 
 void GameData::SaveData(std::string path = "") {
@@ -30,4 +30,17 @@ void GameData::SaveData(std::string path = "") {
 
 void GameData::ReadData(std::string path = "") {
 
+}
+
+bool GameData::IsGameOver() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (num[i][j] == 0)return false;
+            if (i - 1 >= 0 && num[i - 1][j] == num[i][j])return false;
+            if (i + 1 < 4 && num[i + 1][j] == num[i][j])return false;
+            if (j - 1 >= 0 && num[i][j - 1] == num[i][j])return false;
+            if (j + 1 < 4 && num[i][j + 1] == num[i][j])return false;
+        }
+    }
+    return true;
 }
