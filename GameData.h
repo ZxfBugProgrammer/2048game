@@ -13,24 +13,24 @@ public:
 
     //read game data from file
     //or do nothing to begin a new game
-    void read_data(std::string);
+    void ReadData(std::string);
 
     //get grid (x,y) number from data
     // 0 for empty
-    int get_position_number(int, int);
+    int GetPositionNumber(int, int);
 
     //change (x,y) number
-    void change_position_number(int, int, int);
+    void ChangePositionNumber(int, int, int);
 
     //get my score
-    int get_score();
+    int GetScore();
 
     //get history best score
-    int get_best_score();
+    int GetBestScore();
 
     //save data to file
     //default save to work directory
-    void save_data(std::string);
+    void SaveData(std::string);
 
 private:
     int num[4][4];

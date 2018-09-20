@@ -8,26 +8,26 @@ GameData::GameData() {
     score = 0;
 }
 
-int GameData::get_position_number(int x, int y) {
+int GameData::GetPositionNumber(int x, int y) {
     return this->num[x][y];
 }
 
-void GameData::change_position_number(int x, int y, int p) {
+void GameData::ChangePositionNumber(int x, int y, int p) {
     num[x][y] = p;
 }
 
-int GameData::get_score() {
+int GameData::GetScore() {
     return 0;
 }
 
-int GameData::get_best_score() {
+int GameData::GetBestScore() {
     return 0;
 }
 
-void GameData::save_data(std::string path = "") {
+void GameData::SaveData(std::string path = "") {
 
 }
 
-void GameData::read_data(std::string path = "") {
+void GameData::ReadData(std::string path = "") {
 
 }
