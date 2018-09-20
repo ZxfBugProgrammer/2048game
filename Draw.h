@@ -10,13 +10,8 @@ public:
     //initial interface
     Draw();
 
-    /*
-     * update for
-     * 1.collecting all change
-     * 2.prepare the next image
-     * 3.print the new image on the screen
-     */
-    void update();
+    void PrintUi();//print the game ui
+    void PrintNumAlignCenter(int num,int w);//print a align center num ans total of w space
 
 
 private:

@@ -12,4 +12,5 @@ Control::Control() {
 
 void Control::begin() {
     Draw interface;
+    interface.PrintUi();
 }
