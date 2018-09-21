@@ -7,6 +7,8 @@ class GameOperator {
 public:
     GameOperator();
 
+    void Test();
+
     //wait player press key
     //if player press unaccepted key return false
     bool WaitMove();
@@ -14,7 +16,7 @@ public:
     //return player pressed key number
     int GetMoveNumber();
 
-    void Move();
+    void Move(GameData &data, int ope);
 
 private:
     int getkey();

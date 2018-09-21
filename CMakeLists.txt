@@ -12,5 +12,5 @@ set(SOURCE_FILES
         GameOperator.h
         GameData.cpp
         GameData.h
-        )
+        OperatorDef.h)
 add_executable(2048game ${SOURCE_FILES})
