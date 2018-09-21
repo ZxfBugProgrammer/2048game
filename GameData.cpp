@@ -53,6 +53,7 @@ void GameData::MakeNewNumber() {
             if (num[i][j] == 0)t.push_back(std::make_pair(i, j));
         }
     }
+    if (t.size() == 0)return;
     int fillnum;
     if (rand() % 2)fillnum = 2;
     else fillnum = 4;
