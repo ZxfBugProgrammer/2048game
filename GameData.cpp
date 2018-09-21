@@ -8,7 +8,7 @@ GameData::GameData() {
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
             num[i][j] = 0;
-    local_best = score = 0;
+    my_best = score = 0;
 }
 
 int GameData::GetPositionNumber(int x, int y) {
@@ -24,7 +24,7 @@ int GameData::GetScore() {
 }
 
 int GameData::GetBestScore() {
-    return this->local_best;
+    return this->my_best;
 }
 
 bool GameData::IsGameOver() {
@@ -37,6 +37,7 @@ bool GameData::IsGameOver() {
             if (j + 1 < 4 && num[i][j + 1] == num[i][j])return false;
         }
     }
+    my_best = std::max(my_best, score);
     return true;
 }
 
@@ -57,15 +58,17 @@ void GameData::MakeNewNumber() {
     int fillnum;
     if (rand() % 2)fillnum = 2;
     else fillnum = 4;
+    score += fillnum;
     int trand = rand() % t.size();
     ChangePositionNumber(t[trand].first, t[trand].second, fillnum);
 }
 
 void GameData::InitNewGame() {
+    score = 0;
     local_best = std::max(local_best, score);
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
             num[i][j] = 0;
-    MakeNewNumber();MakeNewNumber();
-    score = 0;
+    MakeNewNumber();
+    MakeNewNumber();
 }
