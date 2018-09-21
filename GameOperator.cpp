@@ -20,27 +20,27 @@ GameOperator::GameOperator() {
 
 bool GameOperator::WaitMove() {
     int ch = getkey();
-    if (ch == 'w' || ch == 'W' || ch == 38) {
+    if (ch == 'w' || ch == KEY_UP) {
         statusNum = UP;
         return true;
     }
-    if (ch == 's' || ch == 'S' || ch == 40) {
+    if (ch == 's' || ch == KEY_DOWN) {
         statusNum = DOWN;
         return true;
     }
-    if (ch == 'a' || ch == 'A' || ch == 37) {
+    if (ch == 'a' || ch == KEY_LEFT) {
         statusNum = LEFT;
         return true;
     }
-    if (ch == 'd' || ch == 'D' || ch == 39) {
+    if (ch == 'd' || ch == KEY_RIGHT) {
         statusNum = RIGHT;
         return true;
     }
-    if (ch == 'q' || ch == 'Q') {
+    if (ch == 'q') {
         statusNum = QUIT;
         return true;
     }
-    if (ch == 'y' || ch == 'Y') {
+    if (ch == 'y') {
         statusNum = YES;
         return true;
     }

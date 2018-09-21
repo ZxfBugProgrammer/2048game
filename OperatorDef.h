@@ -13,4 +13,9 @@
 #define YES 6
 #define NO 7
 
+#define KEY_UP 65
+#define KEY_DOWN 66
+#define KEY_LEFT 68
+#define KEY_RIGHT 67
+
 #endif //INC_2048GAME_OPERATORDEF_H
