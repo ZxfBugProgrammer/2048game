@@ -13,8 +13,9 @@ public:
     Draw();
 
     void ClearScreen();
-    void PrintUi(GameData Data,bool flagQuit,bool flagGameOver);//print the game ui
-    void PrintNumAlignCenter(int num,int w);//print a align center num ans total of w space
+
+    void PrintUi(GameData Data, bool flagQuit, bool flagGameOver);//print the game ui
+    void PrintNumAlignCenter(int num, int w);//print a align center num ans total of w space
 
 
 private:

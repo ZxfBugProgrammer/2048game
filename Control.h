@@ -13,7 +13,8 @@ public:
     Control();
 
     void begin();
-    void loop(GameData Data,Draw DrawUi,GameOperator Operator);
+
+    void loop(GameData Data, Draw DrawUi, GameOperator Operator);
 
 };
 

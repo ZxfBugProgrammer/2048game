@@ -77,6 +77,102 @@ void GameOperator::Test() {
 }
 
 void GameOperator::Move(GameData &data, int ope) {
-
+    data.IsMove = false;
+    if (ope == UP) {
+        bool flag = true;
+        while (flag) {
+            flag = false;
+            for (int i = 1; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i - 1, j);
+                    if (t1 == 0)continue;
+                    if (t1 == t2) {
+                        data.ChangePositionNumber(i - 1, j, t1 + t2);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                    if (t2 == 0) {
+                        data.ChangePositionNumber(i - 1, j, t1);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                }
+            }
+        }
+    }
+    if (ope == DOWN) {
+        bool flag = true;
+        while (flag) {
+            flag = false;
+            for (int i = 2; i >= 0; i--) {
+                for (int j = 0; j < 4; j++) {
+                    int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i + 1, j);
+                    if (t1 == 0)continue;
+                    if (t1 == t2) {
+                        data.ChangePositionNumber(i + 1, j, t1 + t2);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                    if (t2 == 0) {
+                        data.ChangePositionNumber(i + 1, j, t1);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                }
+            }
+        }
+    }
+    if (ope == LEFT) {
+        bool flag = true;
+        while (flag) {
+            flag = false;
+            for (int j = 1; j < 4; j++) {
+                for (int i = 0; i < 4; i++) {
+                    int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i, j - 1);
+                    if (t1 == 0)continue;
+                    if (t1 == t2) {
+                        data.ChangePositionNumber(i, j - 1, t1 + t2);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                    if (t2 == 0) {
+                        data.ChangePositionNumber(i, j - 1, t1);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                }
+            }
+        }
+    }
+    if (ope == RIGHT) {
+        bool flag = true;
+        while (flag) {
+            flag = false;
+            for (int j = 2; j >= 0; j--) {
+                for (int i = 0; i < 4; i++) {
+                    int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i, j + 1);
+                    if (t1 == 0)continue;
+                    if (t1 == t2) {
+                        data.ChangePositionNumber(i, j + 1, t1 + t2);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                    if (t2 == 0) {
+                        data.ChangePositionNumber(i, j + 1, t1);
+                        data.ChangePositionNumber(i, j, 0);
+                        flag = true;
+                        data.IsMove = true;
+                    }
+                }
+            }
+        }
+    }
 }
 

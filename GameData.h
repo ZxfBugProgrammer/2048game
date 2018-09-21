@@ -9,6 +9,8 @@
 class GameData {
 public:
 
+    bool IsMove;
+
     GameData();
 
     void SetBestRecord(std::string name = "", int bscore = 0);
