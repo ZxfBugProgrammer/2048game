@@ -20,6 +20,11 @@ void Draw::ClearScreen() {
 }
 
 void Draw::PrintNumAlignCenter(int num, int w) {
+    if (num == 0) {
+        for (int i = 0; i < w; i++)
+            std::cout << ' ';
+        return;
+    }
     int len = 0, tnum = num;
     while (tnum) {
         tnum /= 10;
@@ -39,7 +44,7 @@ void Draw::PrintNumAlignCenter(int num, int w) {
         std::cout << ' ';
 }
 
-void Draw::PrintUi(GameData Data,bool flagQuit,bool flagGameOver) {
+void Draw::PrintUi(GameData Data, bool flagQuit, bool flagGameOver) {
     std::cout << "            HAPPY!     SCORE: ";
     PrintNumAlignCenter(Data.GetScore(), 6);
     std::cout << "     BEST: ";
@@ -63,7 +68,7 @@ void Draw::PrintUi(GameData Data,bool flagQuit,bool flagGameOver) {
     std::cout << "            ----------------------------------------------------" << std::endl;
     if (flagGameOver)
         std::cout << "                Do you want to play the game again?([Y]/[N])" << std::endl;
-    else if(flagQuit)
+    else if (flagQuit)
         std::cout << "                Do you really want to quite the game?([Y]/[N])" << std::endl;
     else
         std::cout << "              [W]:UP  [S]:DOWN  [A]:LEFT  [D]:RIGHT  [Q]:EXIT" << std::endl;
