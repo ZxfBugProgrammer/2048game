@@ -41,3 +41,7 @@ void GameData::SetBestRecord(std::string name, int bscore) {
     if (name.empty())local_name = "None";
     local_best = bscore;
 }
+
+void GameData::MakeNewNumber() {
+
+}

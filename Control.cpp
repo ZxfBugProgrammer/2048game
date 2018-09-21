@@ -20,7 +20,7 @@ void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
         if(Tempop != NO && Tempop != YES && Tempop != QUIT)
         {
             Operator.Move(Data, Tempop);
-            GameData.MakeNewNumber();
+            Data.MakeNewNumber();
         }
         DrawUi.ClearScreen();
     }

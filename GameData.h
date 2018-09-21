@@ -29,6 +29,8 @@ public:
     //check if game can move on
     bool IsGameOver();
 
+    void MakeNewNumber();
+
 private:
     int num[4][4];
     int score, my_best;
