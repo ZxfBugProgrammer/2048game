@@ -4,29 +4,51 @@
 
 #include "Control.h"
 
-Control::Control() {
-}
+Control::Control() = default;
 
 void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
     bool flagQuit = false;
     bool flagGameOver = false;
     while (true) {
-        DrawUi.PrintUi(Data,flagQuit,flagGameOver);
-        flagQuit = false;
-        int Tempop = Operator.GetMoveNumber();
-        if (Tempop == QUIT) {
+        DrawUi.PrintUi(Data, flagQuit, flagGameOver);
+
+        int Tempop;
+        if (flagGameOver) {
             Tempop = Operator.GetMoveNumber();
-            flagQuit = true;
-            if (Tempop == YES)
+            while (Tempop != YES && Tempop != NO)
+                Tempop = Operator.GetMoveNumber();
+            if (Tempop == YES) {
+                Data.InitNewGame();
+                flagGameOver = false;
+            } else
                 break;
         }
-        if(Tempop != NO && Tempop != YES && Tempop != QUIT)
-        {
-            Operator.Move(Data, Tempop);
-            Data.MakeNewNumber();
+
+        else if (flagQuit) {
+            Tempop = Operator.GetMoveNumber();
+            while (Tempop != YES && Tempop != NO)
+                Tempop = Operator.GetMoveNumber();
+            if (Tempop == YES)
+                break;
+            else
+                flagQuit = false;
         }
-        if(Data.IsGameOver())
-            flagGameOver = true;
+
+        else
+        {
+            Tempop = Operator.GetMoveNumber();
+
+            if (Tempop == QUIT)
+                flagQuit = true;
+
+            if (Tempop != NO && Tempop != YES && Tempop != QUIT) {
+                Operator.Move(Data, Tempop);
+                if (Data.IsGameOver())
+                    flagGameOver = true;
+                Data.MakeNewNumber();
+            }
+        }
+
         DrawUi.ClearScreen();
     }
 }

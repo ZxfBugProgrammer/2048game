@@ -1,7 +1,10 @@
 #include "Draw.h"
 #include <iostream>
 #include <iomanip>
+
+#ifdef _WIN32
 #include <afxres.h>
+#endif
 
 void Draw::ClearScreen() {
 #ifdef _WIN32
