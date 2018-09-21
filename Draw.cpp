@@ -19,8 +19,8 @@ void Draw::ClearScreen() {
 #endif
 }
 
-void Draw::PrintNumAlignCenter(int num, int w) {
-    if (num == 0) {
+void Draw::PrintNumAlignCenter(int num, int w, bool Zero) {
+    if (num == 0 && !Zero) {
         for (int i = 0; i < w; i++)
             std::cout << ' ';
         return;
@@ -46,9 +46,9 @@ void Draw::PrintNumAlignCenter(int num, int w) {
 
 void Draw::PrintUi(GameData Data, bool flagQuit, bool flagGameOver) {
     std::cout << "            HAPPY!     SCORE: ";
-    PrintNumAlignCenter(Data.GetScore(), 6);
+    PrintNumAlignCenter(Data.GetScore(), 6, true);
     std::cout << "     BEST: ";
-    PrintNumAlignCenter(Data.GetBestScore(), 6);
+    PrintNumAlignCenter(Data.GetBestScore(), 6, true);
     std::cout << "     !HAPPY" << std::endl;
     std::cout << "            ----------------------------------------------------" << std::endl;
     std::cout << std::endl << std::endl;
@@ -57,7 +57,7 @@ void Draw::PrintUi(GameData Data, bool flagQuit, bool flagGameOver) {
     for (int i = 0; i < 4; i++) {
         std::cout << "                       |";
         for (int j = 0; j < 4; j++) {
-            PrintNumAlignCenter(Data.GetPositionNumber(i, j), 6);
+            PrintNumAlignCenter(Data.GetPositionNumber(i, j), 6, false);
             std::cout << ("|");
         }
         std::cout << std::endl;

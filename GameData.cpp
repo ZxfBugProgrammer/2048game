@@ -66,5 +66,6 @@ void GameData::InitNewGame() {
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
             num[i][j] = 0;
+    MakeNewNumber();MakeNewNumber();
     score = 0;
 }

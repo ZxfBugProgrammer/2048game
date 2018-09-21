@@ -9,6 +9,7 @@ Control::Control() = default;
 void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
     bool flagQuit = false;
     bool flagGameOver = false;
+    Data.InitNewGame();
     while (true) {
         DrawUi.PrintUi(Data, flagQuit, flagGameOver);
 
@@ -45,7 +46,8 @@ void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
                 Operator.Move(Data, Tempop);
                 if (Data.IsGameOver())
                     flagGameOver = true;
-                Data.MakeNewNumber();
+                if(Data.IsMove)
+                    Data.MakeNewNumber();
             }
         }
 
