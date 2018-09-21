@@ -1,16 +1,20 @@
-//
-// Created by 林子豪 on 2018/9/20.
-//
-
 #ifndef INC_2048GAME_CONTROL_H
 #define INC_2048GAME_CONTROL_H
 
+
+#include "GameData.h"
+#include "Draw.h"
+#include "GameOperator.h"
+#include <iostream>
+#include "OperatorDef.h"
 
 class Control {
 public:
     Control();
 
     void begin();
+    void loop(GameData Data,Draw DrawUi,GameOperator Operator);
+
 };
 
 

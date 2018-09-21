@@ -2,6 +2,10 @@
 #include <iostream>
 #include <iomanip>
 
+void Draw::ClearScreen() {
+    system("cls");
+}
+
 void Draw::PrintNumAlignCenter(int num, int w) {
     int len = 0, tnum = num;
     while (tnum) {
@@ -44,7 +48,10 @@ void Draw::PrintUi(GameData Data) {
 
     std::cout << std::endl << std::endl;
     std::cout << "            ----------------------------------------------------" << std::endl;
-    std::cout << "              [W]:UP  [S]:DOWN  [A]:LEFT  [D]:RIGHT  [Q]:EXIT" << std::endl;
+    if(!Data.IsGameOver())
+        std::cout << "              [W]:UP  [S]:DOWN  [A]:LEFT  [D]:RIGHT  [Q]:EXIT" << std::endl;
+    else
+        std::cout << "                Do you want to play the game again?([Y]/[N])" << std::endl;                   " << std::endl
 }
 
 Draw::Draw() = default;
