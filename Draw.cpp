@@ -3,7 +3,11 @@
 #include <iomanip>
 
 void Draw::ClearScreen() {
+#ifdef _WIN32
     system("cls");
+#else
+    system("clear");
+#endif
 }
 
 void Draw::PrintNumAlignCenter(int num, int w) {
@@ -48,10 +52,10 @@ void Draw::PrintUi(GameData Data) {
 
     std::cout << std::endl << std::endl;
     std::cout << "            ----------------------------------------------------" << std::endl;
-    if(!Data.IsGameOver())
+    if (!Data.IsGameOver())
         std::cout << "              [W]:UP  [S]:DOWN  [A]:LEFT  [D]:RIGHT  [Q]:EXIT" << std::endl;
     else
-        std::cout << "                Do you want to play the game again?([Y]/[N])" << std::endl;                   " << std::endl
+        std::cout << "                Do you want to play the game again?([Y]/[N])" << std::endl;
 }
 
 Draw::Draw() = default;
