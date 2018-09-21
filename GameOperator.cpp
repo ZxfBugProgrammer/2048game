@@ -7,11 +7,11 @@
 GameOperator::GameOperator() {
 }
 
-void GameOperator::WaitMove() {
-    std::cout << getch();
+bool GameOperator::WaitMove() {
+    int ch=getkey();
 }
 
-int GameOperator::getch() {
+int GameOperator::getkey() {
     struct termios oldattr, newattr;
     int ch;
     tcgetattr(STDIN_FILENO, &oldattr);
@@ -21,6 +21,14 @@ int GameOperator::getch() {
     ch = getchar();
     tcsetattr(STDIN_FILENO, TCSANOW, &oldattr);
     return ch;
+
+}
+
+int GameOperator::GetMoveNumber() {
+    return this->statusNum;
+}
+
+void GameOperator::Move() {
 
 }
 

@@ -7,10 +7,19 @@ class GameOperator {
 public:
     GameOperator();
 
-    void WaitMove();
+    //wait player press key
+    //if player press unaccepted key return false
+    bool WaitMove();
+
+    //return player pressed key number
+    int GetMoveNumber();
+
+    void Move();
 
 private:
-    int getch();
+    int getkey();
+
+    int statusNum;
 };
 
 
