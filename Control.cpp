@@ -8,12 +8,15 @@ Control::Control() {
 }
 
 void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
+    bool flagQuit = false;
+    bool flagGameOver = false;
     while (true) {
-        DrawUi.PrintUi(Data);
+        DrawUi.PrintUi(Data,flagQuit,flagGameOver);
+        flagQuit = false;
         int Tempop = Operator.GetMoveNumber();
         if (Tempop == QUIT) {
-            std::cout << "                Do you really want to quite the game?([Y]/[N])" << std::endl;
             Tempop = Operator.GetMoveNumber();
+            flagQuit = true;
             if (Tempop == YES)
                 break;
         }
@@ -22,6 +25,8 @@ void Control::loop(GameData Data, Draw DrawUi, GameOperator Operator) {
             Operator.Move(Data, Tempop);
             Data.MakeNewNumber();
         }
+        if(Data.IsGameOver())
+            flagGameOver = true;
         DrawUi.ClearScreen();
     }
 }

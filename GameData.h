@@ -31,6 +31,8 @@ public:
 
     void MakeNewNumber();
 
+    void InitNewGame();
+
 private:
     int num[4][4];
     int score, my_best;

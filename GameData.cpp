@@ -45,3 +45,7 @@ void GameData::SetBestRecord(std::string name, int bscore) {
 void GameData::MakeNewNumber() {
 
 }
+
+void GameData::InitNewGame() {
+
+}
