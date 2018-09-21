@@ -59,5 +59,6 @@ void Control::begin() {
     Draw DrawUi;
     GameData Data;
     GameOperator Operator;
+    srand((unsigned) time(NULL));
     loop(Data, DrawUi, Operator);
 }

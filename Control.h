@@ -7,6 +7,7 @@
 #include "GameOperator.h"
 #include <iostream>
 #include "OperatorDef.h"
+#include <time.h>
 
 class Control {
 public:

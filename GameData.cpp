@@ -47,7 +47,6 @@ void GameData::SetBestRecord(std::string name, int bscore) {
 }
 
 void GameData::MakeNewNumber() {
-    srand((unsigned) time(NULL));
     std::vector<std::pair<int, int> > t;
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
@@ -64,11 +63,11 @@ void GameData::MakeNewNumber() {
 }
 
 void GameData::InitNewGame() {
-    score = 0;
     local_best = std::max(local_best, score);
     for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
             num[i][j] = 0;
     MakeNewNumber();
     MakeNewNumber();
+    score = 0;
 }
