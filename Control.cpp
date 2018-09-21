@@ -29,5 +29,5 @@ void Control::begin() {
     Draw DrawUi;
     GameData Data;
     GameOperator Operator;
-    loop(Data,DrawUi);
+    loop(Data,DrawUi,Operator);
 }
