@@ -1,5 +1,8 @@
 #include "GameData.h"
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 
 GameData::GameData() {
     for (int i = 0; i < 4; i++)
@@ -43,9 +46,24 @@ void GameData::SetBestRecord(std::string name, int bscore) {
 }
 
 void GameData::MakeNewNumber() {
-
+    srand((unsigned) time(NULL));
+    std::vector<std::pair<int, int> > t;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (num[i][j] == 0)t.push_back(std::make_pair(i, j));
+        }
+    }
+    int fillnum;
+    if (rand() % 2)fillnum = 2;
+    else fillnum = 4;
+    int trand = rand() % t.size();
+    ChangePositionNumber(t[trand].first, t[trand].second, fillnum);
 }
 
 void GameData::InitNewGame() {
-
+    local_best = std::max(local_best, score);
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 4; j++)
+            num[i][j] = 0;
+    score = 0;
 }
