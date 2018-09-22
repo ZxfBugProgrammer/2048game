@@ -31,6 +31,8 @@ public:
     //check if game can move on
     bool IsGameOver();
 
+    void AddScore(int);
+
     void MakeNewNumber();
 
     void InitNewGame();

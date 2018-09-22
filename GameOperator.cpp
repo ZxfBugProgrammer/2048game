@@ -87,6 +87,7 @@ void GameOperator::Move(GameData &data, int ope) {
                     int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i - 1, j);
                     if (t1 == 0)continue;
                     if (t1 == t2) {
+                        data.AddScore(t1 + t2);
                         data.ChangePositionNumber(i - 1, j, t1 + t2);
                         data.ChangePositionNumber(i, j, 0);
                         flag = true;
@@ -111,6 +112,7 @@ void GameOperator::Move(GameData &data, int ope) {
                     int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i + 1, j);
                     if (t1 == 0)continue;
                     if (t1 == t2) {
+                        data.AddScore(t1 + t2);
                         data.ChangePositionNumber(i + 1, j, t1 + t2);
                         data.ChangePositionNumber(i, j, 0);
                         flag = true;
@@ -135,6 +137,7 @@ void GameOperator::Move(GameData &data, int ope) {
                     int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i, j - 1);
                     if (t1 == 0)continue;
                     if (t1 == t2) {
+                        data.AddScore(t1 + t2);
                         data.ChangePositionNumber(i, j - 1, t1 + t2);
                         data.ChangePositionNumber(i, j, 0);
                         flag = true;
@@ -159,6 +162,7 @@ void GameOperator::Move(GameData &data, int ope) {
                     int t1 = data.GetPositionNumber(i, j), t2 = data.GetPositionNumber(i, j + 1);
                     if (t1 == 0)continue;
                     if (t1 == t2) {
+                        data.AddScore(t1 + t2);
                         data.ChangePositionNumber(i, j + 1, t1 + t2);
                         data.ChangePositionNumber(i, j, 0);
                         flag = true;

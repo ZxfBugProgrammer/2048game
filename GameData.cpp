@@ -57,7 +57,6 @@ void GameData::MakeNewNumber() {
     int fillnum;
     if (rand() % 2)fillnum = 2;
     else fillnum = 4;
-    score += fillnum;
     int trand = rand() % t.size();
     ChangePositionNumber(t[trand].first, t[trand].second, fillnum);
 }
@@ -70,4 +69,8 @@ void GameData::InitNewGame() {
     MakeNewNumber();
     MakeNewNumber();
     score = 0;
+}
+
+void GameData::AddScore(int add_num) {
+    this->score += add_num;
 }
