@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 
 GameData::GameData() {
     for (int i = 0; i < 4; i++)
@@ -38,6 +39,12 @@ bool GameData::IsGameOver() {
         }
     }
     my_best = std::max(my_best, score);
+    std::ofstream TempFile("2048GAME.data",std::ios::out | std::ios::binary);
+    if(TempFile.is_open())
+        TempFile<<my_best;
+    else
+        std::cout<<"存储最佳分数失败！"<<std::endl;
+    TempFile.close();
     return true;
 }
 
@@ -68,6 +75,10 @@ void GameData::InitNewGame() {
             num[i][j] = 0;
     MakeNewNumber();
     MakeNewNumber();
+    std::ifstream TempFile("2048GAME.data",std::ios::in | std::ios::binary);
+    if(TempFile.is_open())
+        TempFile>>my_best;
+    TempFile.close();
     score = 0;
 }
 
