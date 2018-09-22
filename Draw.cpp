@@ -67,9 +67,9 @@ void Draw::PrintUi(GameData Data, bool flagQuit, bool flagGameOver) {
     std::cout << std::endl << std::endl;
     std::cout << "            ----------------------------------------------------" << std::endl;
     if (flagGameOver)
-        std::cout << "                Do you want to play the game again?([Y]/[N])" << std::endl;
+        std::cout << "                Do you want to play the game again?([Y]/[N])              " << std::endl;
     else if (flagQuit)
-        std::cout << "                Do you really want to quite the game?([Y]/[N])" << std::endl;
+        std::cout << "                Do you really want to quite the game?([Y]/[N])            " << std::endl;
     else
         std::cout << "              [W]:UP  [S]:DOWN  [A]:LEFT  [D]:RIGHT  [Q]:EXIT" << std::endl;
 }
